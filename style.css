@@ -1,0 +1,112 @@
+﻿/* ===== Mortal Kombat Theme Base ===== */
+*{box-sizing:border-box;}
+body{
+  font-family:"Cinzel",serif;
+  background:url("https://wallpapercave.com/wp/wp5909885.jpg") no-repeat center center fixed;
+  background-size:cover;
+  color:#f0d58c;
+  margin:0;
+  line-height:1.6;
+}
+body::before{
+  content:"";position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.75);z-index:-1;
+}
+h1,h2,h3{color:#ffb400;text-shadow:2px 2px 6px #000;font-weight:700;letter-spacing:1px;}
+main{padding:20px;min-height:70vh;}
+
+/* ===== NAVBAR ===== */
+.custom-nav{
+  background:linear-gradient(90deg,#1a0000,#000);
+  border-bottom:2px solid #ff3b00;
+  box-shadow:0 0 15px rgba(255,59,0,0.6);
+  padding:15px 0;
+}
+.custom-nav .navbar-brand img{height:50px;}
+.custom-nav .navbar-nav .nav-link{
+  color:#f0d58c!important;
+  font-weight:bold;
+  margin:0 15px;
+  transition:color .3s,text-shadow .3s;
+}
+.custom-nav .navbar-nav .nav-link:hover,
+.custom-nav .navbar-nav .nav-link.active{
+  color:#ff3b00!important;
+  text-shadow:0 0 8px #ff3b00;
+}
+.navbar-toggler{border:none;}
+.navbar-toggler-icon{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='gold' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ===== BOXES (Part 1) ===== */
+.boxes-container{display:grid;gap:10px;}
+.box{
+  background:rgba(255,59,0,0.8);
+  border:2px solid #ffb400;
+  color:#fff;
+  font-weight:bold;
+  text-transform:uppercase;
+  transition:transform .3s,box-shadow .3s;
+  text-align:center;
+  padding:20px;
+  border-radius:8px;
+}
+.box:hover{transform:scale(1.05);box-shadow:0 0 20px #ff3b00;}
+
+/* Responsive Grid */
+@media(max-width:599px){.boxes-container{grid-template-columns:1fr;}body{font-size:14px;}}
+@media(min-width:600px)and(max-width:991px){.boxes-container{grid-template-columns:1fr 1fr;}body{font-size:16px;}}
+@media(min-width:992px){.boxes-container{grid-template-columns:repeat(3,1fr);}body{font-size:18px;}}
+
+/* ===== CARDS ===== */
+.card{
+  background:rgba(0,0,0,0.8);
+  border:2px solid #ff3b00;
+  color:#f0d58c;
+  box-shadow:0 0 15px rgba(255,59,0,0.5);
+  transition:transform .3s,box-shadow .3s;
+}
+.card:hover{transform:scale(1.03);box-shadow:0 0 25px #ff3b00;}
+.card-title{color:#ffb400;font-weight:bold;}
+.card-img-top{object-fit:cover;height:200px;border-top-left-radius:8px;border-top-right-radius:8px;}
+
+/* ===== BUTTONS ===== */
+.btn-outline-primary,.btn-outline-success{
+  border-color:#ff3b00;color:#f0d58c;font-weight:bold;text-transform:uppercase;
+}
+.btn-outline-primary:hover,.btn-outline-success:hover{
+  background:#ff3b00;border-color:#ff3b00;color:#fff;box-shadow:0 0 12px #ff3b00;
+}
+
+/* ===== SIDEBAR & FOOTER ===== */
+.sidebar{
+  border-left:3px solid #ff3b00;
+  padding-left:20px;
+  background:rgba(26,0,0,0.8);
+  border-radius:10px;
+}
+footer {
+    background: linear-gradient(90deg,#000,#1a0000
+}
+/* ===== Highlight subtitle in Part 2 ===== */
+.mk-highlight {
+    color: #ffb400; /* золотой цвет */
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #000, 0 0 15px #ff3b00; /* контраст и лёгкое свечение */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* 🔥 Анимация "дыхания" текста */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px #000, 0 0 10px #ff3b00;
+    }
+
+    to {
+        text-shadow: 0 0 15px #000, 0 0 25px #ffb400;
+    }
+}
